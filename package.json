@@ -4,8 +4,7 @@
   "description": "ludo",
   "main": "server.js",
   "scripts": {
-    "test": "node server.js",
-    "start": "nodemon server2.js"
+    "start": "nodemon server.js"
   },
   "author": "Soner",
   "license": "ISC",
