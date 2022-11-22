@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Soner Özaşık</title>
+    <link rel="stylesheet" href="css/game.css" >
+    <div class="top">
+        <h2 id=usernameText>username</h2>
+        <div class="top2">
+            <h2>LUDO</h2>
+        </div>
+    </div>
+</head>
+<body>
+   <div class="game">
+    <div class="container card">
+        <!-- First Row -->
+         <div class="container-row1">
+           <div class="row1-col1 green">
+               <div class="row1-col1-child white">
+                   <div class="green"></div>
+                   <div class="green"></div>
+                   <div class="green"></div>
+                   <div class="green"></div>
+               </div>
+           </div>
+           <div class="row1-col2">
+               <div>11</div>
+               <div>12</div>
+               <div>13</div>
+               <div>10</div>
+               <div class="yellow"></div>
+               <div class="yellow">14</div>
+               <div>9</div>
+               <div class="yellow"></div>
+               <div>15</div>
+               <div>8</div>
+               <div class="yellow"></div>
+               <div>16</div>
+               <div>7</div>
+               <div class="yellow"></div>
+               <div>17</div>
+               <div>6</div>
+               <div class="yellow"></div>
+               <div>18</div>
+           </div>
+           <div class="row1-col3 yellow">
+               <div class="row1-col3-child white">
+                   <div class="yellow"></div>
+                   <div class="yellow"></div>
+                   <div class="yellow"></div>
+                   <div class="yellow"></div>
+               </div>
+           </div>
+       </div>
+
+    <!-- Second row -->
+       <div class="container-row2">
+           <div class="row2-col1">
+               <div>52</div>
+               <div id=1 class="green box"></div>
+               <div id=2 class="sikik box"></div>
+               <div>3</div>
+               <div>4</div>
+               <div>5</div>
+               <div>51</div>
+               <div class="green"></div>
+               <div class="green"></div>
+               <div class="green"></div>
+               <div class="green"></div>
+               <div class="green"></div>
+               <div>50</div>
+               <div>49</div>
+               <div>48</div>
+               <div>47</div>
+               <div>46</div>
+               <div>45</div>
+           </div>
+           <div class="row2-col2">
+               <!-- add triangular effect using html and css -->
+               <div class="contain-triangles">
+                   <div class="triangle-right"></div>
+                   <div class="triangle-up"></div>
+                   <div class="triangle-left"></div>
+                   <div class="triangle-down"></div>
+               </div>
+           </div>
+           <div class="row2-col3">
+               <div>19</div>
+               <div>20</div>
+               <div>21</div>
+               <div>22</div>
+               <div>23</div>
+               <div>24</div>
+               <div class="blue"></div>
+               <div class="blue"></div>
+               <div class="blue"></div>
+               <div class="blue"></div>
+               <div class="blue"></div>
+               <div>25</div>
+               <div>31</div>
+               <div>30</div>
+               <div>29</div>
+               <div>28</div>
+               <div class="blue">27</div>
+               <div>26</div>
+           </div>
+       </div>
+
+ <!-- Third row -->
+       <div class="container-row3">
+           <div class="row3-col1 red">
+               <div class="row3-col1-child white">
+                   <div class="red"></div>
+                   <div class="red"></div>
+                   <div class="red"></div>
+                   <div class="red"></div>
+               </div>
+           </div>
+           <div class="row3-col2">
+               <div>44</div>
+               <div class="red"></div>
+               <div>32</div>
+               <div>43</div>
+               <div class="red"></div>
+               <div>33</div>
+               <div>42</div>
+               <div class="red"></div>
+               <div>34</div>
+               <div>41</div>
+               <div class="red"></div>
+               <div>35</div>
+               <div class="red">40</div>
+               <div class="red"></div>
+               <div >36</div>
+               <div>39</div>
+               <div>38</div>
+               <div>37</div>
+           </div>
+           <div class="row3-col3 blue">
+               <div class="row3-col3-child white">
+                   <div class="blue"></div>
+                   <div class="blue"></div>
+                   <div class="blue"></div>
+                   <div class="blue"></div>
+               </div>
+           </div>
+       </div>
+    </div>
+    <img src="img/dice.gif" id="dice-gif">
+   </div>
+   <div class="chat-box">
+       <div class="top">
+        <h2 class="top2">CHAT</h2> 
+       </div>
+       <div class="events"><ul id="events"></ul> </div>
+       <div class="controls">
+           <div class="chat-wrapper">
+               <form id="chat-form">
+                   <input id="chat" autocomplete="off" title="chat"/>
+                   <button id="Send">Send</button>
+               </form>
+           </div>
+       </div>
+   </div>
+
+   <script src="/socket.io/socket.io.js"></script>
+    
+    <script>
+        var sock=io();
+        
+        const log =(text)=>{
+    const parent =document.querySelector('#events');
+    const el =document.createElement('li');
+    el.innerHTML=text;
+
+    parent.appendChild(el);
+    parent.scrollTop=parent.scrollHeight;
+}
+
+const onChatSubmitted =(sock)=>(e)=>{
+    e.preventDefault();
+
+    const input=document.querySelector('#chat');
+    const text=input.value;
+    input.value='';
+
+    sock.emit('message',text);
+}
+
+(()=>{
+log('Welcome the game lobby!');
+
+sock.on('message',log);
+
+ document
+ .querySelector('#chat-form')
+ .addEventListener('submit' ,onChatSubmitted(sock))
+})();
+for(let i=1;i<3;i++){
+document.getElementById(i.toString()).addEventListener('click',function(e){
+    var img=document.createElement("img");
+    img.src="img/redstar.png";
+    img.style.width='25px';
+    img.style.margin='auto';
+    //e.appendChild(img);
+    e.srcElement.appendChild(img);
+    console.log(e);
+})
+}
+
+    </script>
+</body>
+</html>

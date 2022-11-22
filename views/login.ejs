@@ -1,0 +1,1417 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Soner Özaşık</title>
+    <link rel="stylesheet" href="css/login.css" >
+</head>
+<body>
+    <div class="top">
+        <h2 id=usernameText>username</h2>
+        <div class="top2">
+            <h2 >LUDO</h2>
+        </div>
+    </div>
+    <form action="/" method="POST" id="login"class="login">
+        <h2 class=Message id=form_message></h2>
+        <h2 class="UsernameText">Username</h2>
+        <input id="login_textbox_username" class= "textbox">
+        <div class="line1"></div>
+        <h2 class="PasswordText">Password</h2>
+        <input id ="login_textbox_password" class= "textbox">
+        <div class="line2">
+        </div>
+        <div id="login_button_login"class="loginbutton" type="submit">
+            Login
+        </div>
+        <div id="login_button_signup" class ="signupbutton">
+            Sign Up
+        </div>
+    </form>
+    <form  id="signup" class="signup">
+        <h2 class=Message id=form_message>Message</h2>
+        <h2 class="UsernameText">Username</h2>
+        <input id="signup_textbox_username" class= "textbox">
+        <div class="line"></div>
+        <h2 class="PasswordText">Password</h2>
+        <input id="signup_textbox_password" class= "textbox">
+        <div class="line"></div>
+        <h2 class="PasswordText">Confirm Password</h2>
+        <input id="signup_textbox_confpassword" class= "textbox">
+        <div class="line"></div>
+        <div id="signup_button_signup" class="button1">
+            Sign Up
+        </div>
+        <div id="backbutton" class="button2">
+            Back
+        </div>
+    </form>
+    <div id=container_gametop>
+        <div class="rooms" id="room_players" ><ul id="rooms_playerlist"></ul> </div>
+
+        <div id="alert_bar">
+            <h2 id=room_name>sonerozasik room</h2>
+            <h2 id=alert_turn>Game starts with 4 players!</h2>
+            <h2 id=alert_dice>Roll a dice!</h2>
+        </div>
+    </div>  
+    <div id="container_lobby">
+        <form  id="lobby" class="lobby">
+            <div id=lobby_text>LOBBY</div>
+            <div class="roomlist"><ul id="rooms"></ul> </div>
+            <div id=lobby_buttons_tab>
+                <h2 id="lobby_button_create">Create Room</h2>
+                <h2 id="lobby_button_refresh">Refresh</h2>
+            </div>
+        </form>
+    
+        <form  id="playerlist" class="playerlist">
+            <h2 id="playerlist_text">Player List</h2>
+        </form>
+
+        <form  id="profile" class="profile">
+            <div>PROFILE</div>
+            <h2 id=profile_username>username</h2>
+            <h2 id=profile_first>first</h2>
+            <h2 id=profile_second>second</h2>
+            <h2 id=profile_third>third</h2>
+            <h2 id=profile_last>last</h2>
+            <h2 id=profile_total>totalplayed</h2>
+            <h1 id=profile_back>Back</h1>
+        </form>
+    </div>
+
+    <div id=container_game>
+
+        <div id="chat-box" class="chat-box">
+        <div class="top">
+         <h2 class="top2">CHAT</h2> 
+        </div>
+        <div class="events"><ul id="events"></ul> </div>
+        <div class="controls">
+            <div class="chat-wrapper">
+                <form id="chat-form">
+                    <input id="chat" autocomplete="off" title="chat"/>
+                    <button id="Send">Send</button>
+                </form>
+            </div>
+        </div>
+        </div>
+
+
+     <div id="game" class="game">
+        <div class="container card">
+            <!-- First Row -->
+             <div class="container-row1">
+               <div class="row1-col1 green">
+                   <div class="row1-col1-child white">
+                       <div id=g0 class="green box"></div>
+                       <div id=g1 class="green box"></div>
+                       <div id=g2 class="green box"></div>
+                       <div id=g3 class="green box"></div>
+                   </div>
+               </div>
+               <div class="row1-col2">
+                   <div id=10 class=box></div>
+                   <div id=11 class=box></div>
+                   <div id=12 class=box></div>
+                   <div id=9 class=box></div>
+                   <div id=finish_y_0 class="yellow box"></div>
+                   <div id=13 class="yellow box"></div>
+                   <div id=8 class=box></div>
+                   <div id=finish_y_1 class="yellow box"></div>
+                   <div id=14 class=box></div>
+                   <div id=7 class=box></div>
+                   <div id=finish_y_2 class="yellow box"></div>
+                   <div id=15 class=box></div>
+                   <div id=6 class=box></div>
+                   <div id=finish_y_3 class="yellow box"></div>
+                   <div id=16 class=box></div>
+                   <div id=5 class=box></div>
+                   <div id=finish_y_4 class="yellow box"></div>
+                   <div id=17 class=box></div>
+               </div>
+               <div class="row1-col3 yellow">
+                   <div class="row1-col3-child white">
+                       <div id=y0 class="yellow box"></div>
+                       <div id=y1 class="yellow box"></div>
+                       <div id=y2 class="yellow box"></div>
+                       <div id=y3 class="yellow box"></div>
+                   </div>
+               </div>
+           </div>
+    
+        <!-- Second row -->
+           <div class="container-row2">
+               <div class="row2-col1">
+                   <div id=51 class=box></div>
+                   <div id=0 class="green box"></div>
+                   <div id=1 class=box></div>
+                   <div id=2 class=box></div>
+                   <div id=3 class=box></div>
+                   <div id=4 class=box></div>
+                   <div id=50 class=box></div>
+                   <div id=finish_g_0 class="green box"></div>
+                   <div id=finish_g_1 class="green box"></div>
+                   <div id=finish_g_2 class="green box"></div>
+                   <div id=finish_g_3 class="green box"></div>
+                   <div id=finish_g_4 class="green box"></div>
+                   <div id=49 class=box></div>
+                   <div id=48 class=box></div>
+                   <div id=47 class=box></div>
+                   <div id=46 class=box></div>
+                   <div id=45 class=box></div>
+                   <div id=44 class=box></div>
+               </div>
+               <div class="row2-col2">
+                   <!-- add triangular effect using html and css -->
+                   <div class="contain-triangles">
+                       <div class="triangle-right"></div>
+                       <div class="triangle-up"></div>
+                       <div class="triangle-left"></div>
+                       <div class="triangle-down"></div>
+                   </div>
+               </div>
+               <div class="row2-col3">
+                   <div id=18 class=box></div>
+                   <div id=19 class=box></div>
+                   <div id=20 class=box></div>
+                   <div id=21 class=box></div>
+                   <div id=22 class=box></div>
+                   <div id=23 class=box></div>
+                   <div id=finish_b_4 class="blue box"></div>
+                   <div id=finish_b_3 class="blue box"></div>
+                   <div id=finish_b_2 class="blue box"></div>
+                   <div id=finish_b_1 class="blue box"></div>
+                   <div id=finish_b_0 class="blue box"></div>
+                   <div id=24 class=box></div>
+                   <div id=30 class=box></div>
+                   <div id=29 class=box></div>
+                   <div id=28 class=box></div>
+                   <div id=27 class=box></div>
+                   <div id=26 class="blue box"></div>
+                   <div id=25 class=box></div>
+               </div>
+           </div>
+    
+     <!-- Third row -->
+           <div class="container-row3">
+               <div class="row3-col1 red">
+                   <div class="row3-col1-child white">
+                       <div id=r0 class="red box"></div>
+                       <div id=r1 class="red box"></div>
+                       <div id=r2 class="red box"></div>
+                       <div id=r3 class="red box"></div>
+                   </div>
+               </div>
+               <div class="row3-col2">
+                   <div id=43 class=box></div>
+                   <div id=finish_r_4 class="red box"></div>
+                   <div id=31 class=box></div>
+                   <div id=42 class=box></div>
+                   <div id=finish_r_3 class="red box"></div>
+                   <div id=32 class=box></div>
+                   <div id=41 class=box></div>
+                   <div id=finish_r_2 class="red box"></div>
+                   <div id=33 class=box></div>
+                   <div id=40 class=box></div>
+                   <div id=finish_r_1 class="red box"></div>
+                   <div id=34 class=box></div>
+                   <div id=39 class="red box"></div>
+                   <div id=finish_r_0 class="red box"></div>
+                   <div id=35 class=box></div>
+                   <div id=38 class=box></div>
+                   <div id=37 class=box></div>
+                   <div id=36 class=box></div>
+               </div>
+               <div class="row3-col3 blue">
+                   <div class="row3-col3-child white">
+                       <div id=b0 class="blue box"></div>
+                       <div id=b1 class="blue box"></div>
+                       <div id=b2 class="blue box"></div>
+                       <div id=b3 class="blue box"></div>
+                   </div>
+               </div>
+           </div>
+        </div>
+        <img src="img/dice.gif" id="dice-gif">
+        <h2 id=test>test</h2>  
+       </div>
+
+       <div  id="leaderboard" class="leaderboard">
+            <h2 id=leaderboard_text>Leader Board</h2>
+           <h2 id=first>asdadas</h2>
+           <h2 id=second>asdas</h2>
+           <h2 id=third>asdsa</h2>
+           <h2 id=last>asdsa</h2>
+           <h2 id=restart>Restart</h2>
+           <h2 id=quit>Quit</h2>
+
+       </div>
+
+    </div>
+
+
+
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket =io();
+        /*
+            Keeps users in the room        
+        */
+        class Users{
+            userList=[];
+            constructor(){
+            }
+        }
+        var users= new Users();
+        //GAME CLASS
+        /*
+            Algorithms about game playing. (start,move,roll dice...)
+        */
+        class Game{
+            turn;
+            Boxes=[];
+            Blocks=[];
+            FinishPoints=[0,0,0,0];
+            FinishBoxes=[[],[]];
+            played=0;
+            countOnTableEachColor=[0,0,0,0];
+            lastDice;
+            firstDices=[-1,-1,-1,-1];
+            isRolled=0;
+            sixInARow=0;
+            Finishers=[];
+            finisherNames=[];
+
+            
+             constructor(){
+                 /*
+                 1=green
+                 2=yellow
+                 3=blue
+                 4=red
+                 */
+                for(let i=0;i<52;i++){ //fills -1 the boxes means empty
+                    this.Boxes[i]=-1;
+                    this.Blocks[i]=-1;
+                }
+                for(var i=0;i<4;i++){   //fills -1 the finishboxes means empty
+                    this.FinishBoxes[i]=[];
+                    for(var j=0;j<5;j++){
+                        this.FinishBoxes[i][j]=-1;
+                    }
+                }
+                this.turn=1; //turn starts with green (green:1)
+             }
+
+
+             /*
+                Starts the game and puts the starts on the table
+             */
+            start(){
+                var snd=new Audio("/sound/start.mp3");
+                snd.play();
+                alert("Game is starting!");
+                this.showTurn();
+                for(let i=0;i<4;i++){
+                    var str ='y'+i.toString();
+                    var img=document.createElement("img");
+                    img.src="img/Yellowstar.png";
+                    img.style.width='25px';
+                    img.style.margin='auto';
+                    document.getElementById(str).appendChild(img);
+                    str ='g'+i.toString();
+                    var img=document.createElement("img");
+                    img.src="img/Greenstar.png";
+                    img.style.width='25px';
+                    img.style.margin='auto';
+                    document.getElementById(str).appendChild(img);
+                    var str ='r'+i.toString();
+                    var img=document.createElement("img");
+                    img.src="img/Redstar.png";
+                    img.style.width='25px';
+                    img.style.margin='auto';
+                    document.getElementById(str).appendChild(img);
+                    var str ='b'+i.toString();
+                    var img=document.createElement("img");
+                    img.src="img/Bluestar.png";
+                    img.style.width='25px';
+                    img.style.margin='auto';
+                    document.getElementById(str).appendChild(img);
+                }
+             }
+
+             /*
+                Next turn method
+             */
+            nextTurn(){
+                if(this.lastDice==6 ) this.sixInARow++; //Counts how much six rolled in a row.
+                if(this.isFirstRoundPlayed()){
+                if(this.lastDice!=6 || this.sixInARow==3)  {this.turn++; this.sixInARow=0;}} //if dice is not 6 or its 6 three times in a row, skip turn 
+                else this.turn++;
+                 if(this.turn==5) this.turn=1;
+                 while(true){
+                     if(!this.isFinisher(this.turn)){ // if turn is for finisher, skip it.
+                         break;
+                     }
+                     this.turn++;
+                     if(this.turn==5) this.turn=1;
+                 }
+                 this.showTurn();
+                 this.isRolled=0; //set zero for next turn
+             }
+             /*
+                Returns a random number between 1-6
+             */
+            rollDice(){
+                return (Math.floor(Math.random()*6))+1;
+                var dice =(Math.floor(Math.random()*5))+1;
+             }
+
+             /*
+                Shows the turn
+             */
+             showTurn(){
+                 var color;
+                 if(this.turn==1) color="Green";
+                 else if(this.turn==2) color="Yellow";
+                 else if(this.turn==3) color="Blue";
+                 else if(this.turn==4) color="Red";
+                 this.alertTurn("Turn for "+color+"!");
+             }
+
+             /*
+                Returns the color of turn
+             */
+             getColor(){
+                var color;
+                 if(this.turn==1) color="Green";
+                 else if(this.turn==2) color="Yellow";
+                 else if(this.turn==3) color="Blue";
+                 else if(this.turn==4) color="Red";
+                 return color;
+             }
+
+             /*
+                Returns the color by index
+             */
+             getColorByIndex(index){
+                var color;
+                 if(index==1) color="Green";
+                 else if(index==2) color="Yellow";
+                 else if(index==3) color="Blue";
+                 else if(index==4) color="Red";
+                 return color;
+             }
+
+             /*
+                When a player rolls a dice, this method shows that or skip the turn.
+             */
+             play(dice){
+                this.alertDice("Dice is "+dice+" for "+this.getColor()+".");
+                this.lastDice=dice;
+                this.isRolled=1;
+                if(this.isFirstRoundPlayed()){  //After the first round
+                    if(dice!=6 && this.countOnTableEachColor[this.turn-1]==0 ) this.nextTurn(); //Table is empty and dice is not 6.
+                    else if(!this.isThereChanceToPlay() && this.countOnTableEachColor[this.turn-1]!=0){ //There is no chance to play.
+                    alert("You don't have a chance to play!");
+                    this.nextTurn();
+                 }
+                }
+                else{                        //for first round
+                    this.firstDices[this.turn-1]=dice;  
+                    console.log(this.firstDices);
+                    if(this.isFirstRoundPlayed()){ //if first round finished
+                        var max=this.firstDices[0];
+                        var index=1;
+                        for(var i=1;i<4;i++){ //finds the biggest dice
+                            if(this.firstDices[i]>max){ 
+                                max=this.firstDices[i];
+                                index=i+1;
+                            }
+                        }
+                        sleep(1000).then(()=>{ // waits 1 second and shows the biggest dice for first round
+                        this.alertDice("The biggest dice is for "+this.getColorByIndex(index)+" .");
+                        this.turn=index;
+                        this.isRolled=0; //sets the value 0 for next round
+                        this.showTurn();
+                        })
+                    }else // if first round still goes on go to next turn
+                    this.nextTurn();
+                }
+             }
+
+             /*
+                Play move function gets color, element and state.
+                Checks the move is playable and directs it to the other players using socket
+                state 1 is for moving the star to start point of color
+                state 2 is for moving the star from a box to another box
+                state 3 is for moving the star from a box to finish boxes
+                state 4 is for moving the star from a finish box to home
+             */
+             playMove(color,e,state){    
+                 if(playerList[this.turn]==document.getElementById('usernameText').textContent){       
+                if(state==1 && e.srcElement.childElementCount  && this.isFirstRoundPlayed() && this.turn==color && this.lastDice==6&& this.checkMovable(1,0,this.getStartPoint())&&this.isRolled==1 ){
+                socket.emit('move',{color:color,from:e.srcElement.id,to:this.getStartPoint(),room:document.getElementById('room_name').textContent,state:1})   
+                }
+                else if(state==2 && this.Boxes[parseInt(e.srcElement.id)]==this.turn &&this.isRolled==1){ 
+                var number=parseInt(e.srcElement.id)+this.lastDice;
+                if(number>51) number=number-52;
+                if(this.isFinishBox(parseInt(e.srcElement.id),number)!="no"){
+                    var number2=this.getStartPoint()-2;
+                    if(number2<0) number2 = number2+52;
+                    if(this.checkMovable(2,parseInt(e.srcElement.id),number2)) 
+                    socket.emit('move',{color:color,from:parseInt(e.srcElement.id),to:this.isFinishBox(parseInt(e.srcElement.id),number),room:document.getElementById('room_name').textContent,state:3})
+                    }
+                    else{
+                        if(this.checkMovable(2,parseInt(e.srcElement.id),number))  
+                        socket.emit('move',{color:color,from:parseInt(e.srcElement.id),to:number,room:document.getElementById('room_name').textContent,state:2});
+                        }
+                }
+                else if(state==4 && color==this.turn &&this.isRolled==1 ){
+                    var intpart = e.srcElement.id[e.srcElement.id.length-1]
+                    if(this.lastDice==5-intpart && this.FinishBoxes[this.turn-1][intpart]==this.turn){
+                        socket.emit('move',{color:color,from:e.srcElement.id,to:0,room:document.getElementById('room_name').textContent,state:4});
+                    }
+                }
+
+                console.log(this.Boxes[parseInt(e.srcElement.id)]);
+                console.log(this.Boxes[e.srcElement.id]);
+                console.log(e.srcElement.id);
+              }
+             }
+             /*
+                Gets move from server.
+                state 1 is for moving the star to start point of color
+                state 2 is for moving the star from a box to another box
+                state 3 is for moving the star from a box to finish boxes
+                state 4 is for moving the star from a finish box to home
+             */
+
+             getMoved(color,from,to,state){
+                 var snd=new Audio("/sound/move.mp3");
+                 snd.play();
+                if(state==1){
+
+                    if(this.Boxes[to]==color){ //if present box and previous box has same color
+                        this.Blocks[to]=color;
+                    }
+                    else{                     //if present box and previous box has different color
+                        this.putOthertoStart(to);
+                        this.Boxes[to]=color;
+                    }
+                document.getElementById(from.toString()).innerHTML="";
+                
+                var img=document.createElement("img");
+                img.src="img/"+this.getColorByIndex(color)+"star.png";
+                img.style.width='25px';
+                img.style.margin='auto';
+
+                document.getElementById(to.toString()).appendChild(img);
+                this.countOnTableEachColor[color-1]++;
+                console.log(this.Boxes);
+                this.nextTurn();
+
+                }else if(state==2){
+                    console.log("boxes to:" +this.Boxes[to]);
+                    console.log("color: " +color);
+                    /// is finish point?
+                    if(this.Boxes[to]==color){   //if present box and previous box has same color
+                        this.Blocks[to]=color;
+                    }
+                    else{                        //if present box and previous box has different color                       
+                        this.putOthertoStart(to,color);
+                        this.Boxes[to]=this.turn;
+                    }
+                    if(this.Blocks[from]!=-1){   //if previous box has a block
+                        document.getElementById(from.toString()).innerHTML="";
+                        var img=document.createElement("img");
+                        img.src="img/"+this.getColor()+"star.png";
+                        img.style.width='25px';
+                        img.style.margin='auto';
+                        document.getElementById(from.toString()).appendChild(img);
+                        this.Blocks[from]=-1;
+                    }
+                    else{                       //if previous box hasn't got a block
+                        document.getElementById(from.toString()).innerHTML="";                      
+                        this.Boxes[from]=-1;
+                    }
+                    var img=document.createElement("img");
+                        img.src="img/"+this.getColor()+"star.png";
+                        img.style.width='25px';
+                        img.style.margin='auto';
+                        document.getElementById(to.toString()).appendChild(img);
+
+                        console.log("Blocks:");
+                        console.log(this.Blocks);
+                        console.log("Boxes:");
+                        console.log(this.Boxes);
+                        this.nextTurn();
+                }
+                else if(state==3){
+                    console.log("state 3 to : "+to);
+                    console.log("state 3 to last letter: "+to[to.length-1]);
+                    console.log(this.FinishBoxes[this.turn-1][to[to.length-1]]);
+                    if(this.FinishBoxes[this.turn-1][to[to.length-1]]==-1){       //if goal finish box is free
+                        if(this.Blocks[from]!=-1){                                //if previous box has a block
+                        document.getElementById(from.toString()).innerHTML="";
+                        var img=document.createElement("img");
+                        img.src="img/"+this.getColor()+"star.png";
+                        img.style.width='25px';
+                        img.style.margin='auto';
+                        document.getElementById(from.toString()).appendChild(img);
+                        this.Blocks[from]=-1;
+                        }
+                        else{                                                    //if previous box hasn't got a block                                                   
+                            document.getElementById(from.toString()).innerHTML="";                      
+                            this.Boxes[from]=-1;
+                        }
+                        this.FinishBoxes[this.turn-1][parseInt(to[to.length-1])]=this.turn;
+                        var img=document.createElement("img");
+                        img.src="img/"+this.getColor()+"star.png";
+                        img.style.width='25px';
+                        img.style.margin='auto';
+                        document.getElementById(to).appendChild(img);
+                        console.log(this.FinishBoxes);
+                        this.nextTurn();
+                    }
+                }
+                else if(state==4){           
+                    var intpart = from[from.length-1];
+                    document.getElementById(from).innerHTML="";
+                    this.FinishBoxes[this.turn-1][intpart]=-1;
+                    this.FinishPoints[this.turn-1]++;
+                    this.countOnTableEachColor[this.turn-1]--;
+                    this.checkFinisher();
+                    this.nextTurn();
+                }
+             }
+
+             /*
+                Puts the star which is in the goal block to the home
+             */
+             putOthertoStart(to){ 
+                if(this.Boxes[to]!=-1 ){
+                    document.getElementById(to.toString()).innerHTML="";
+                        var ontheBox;
+                        if(this.Boxes[to]==1){
+                            ontheBox='g'
+                        }else if(this.Boxes[to]==2){
+                            ontheBox='y'
+                        }else if(this.Boxes[to]==3){
+                            ontheBox='b'
+                        }else if(this.Boxes[to]==4){
+                            ontheBox='r'
+                        }
+                        for(let i=0;i<4;i++){
+                            if(!document.getElementById(ontheBox+i.toString()).innerHTML){
+                                var img=document.createElement("img");
+                                img.src="img/"+this.getColorByIndex(this.Boxes[to])+"star.png";
+                                img.style.width='25px';
+                                img.style.margin='auto'
+                                document.getElementById(ontheBox+i.toString()).appendChild(img);
+                                this.countOnTableEachColor[this.Boxes[to]-1]--;
+                                break;
+                            }
+                        }
+                    
+                }
+            }
+
+            /*
+                Checks the star goes finish box or not
+            */
+            isFinishBox(from,to){
+                if(this.getColor()=="Blue"){
+                    if(from>=19 && from<=24){
+                        if(to>24){
+                            return "finish_b_"+(to-25).toString();
+                        }
+                        else return "no";
+                    }
+                    else return "no";
+                }
+                else if(this.getColor()=="Red"){
+                    if(from>=32 && from<=37){
+                        if(to>37){
+                            return "finish_r_"+(to-38).toString();
+                        }
+                        else return "no";
+                    }
+                    else return "no";
+                }
+                else if(this.getColor()=="Green"){
+                    if(from>=45 && from<=50){
+                        if(to==51){
+                            return "finish_g_0";
+                        }
+                        else if(to>=0 &&to<=4){
+                            return "finish_g_"+(to+1).toString();
+                        }
+                        else return "no";
+                    }
+                    else return "no";
+                }
+                else if(this.getColor()=="Yellow"){
+                    if(from>=6 && from<=11){
+                        if(to>11){
+                            return "finish_y_"+(to-12).toString();
+                        }
+                        else return "no";
+                    }
+                    else return "no";
+                }
+            }
+
+            /*
+                Checks the stars and alerts that which color is finished the game
+            */
+            checkFinisher(){
+                for(var i=0;i<4;i++){
+                    if(this.FinishPoints[i]==4 && !this.isFinisher(i+1)){ 
+                        var snd=new Audio("/sound/finish.wav");
+                        snd.play();
+                        alert(this.getColorByIndex(i+1)+" finished the game!");
+                        this.Finishers[this.Finishers.length]=i+1;
+                        if(this.Finishers.length==3){
+                            alert("Game finished!");
+                            //SHOW THE LEADERBOARD
+                            var snd=new Audio("/sound/finishall.wav");
+                            snd.play();
+                            this.showLeaderboard();
+                            console.log(this.Finishers);
+                        }
+                        //break;   //to do yorumdan kaldır
+                    }
+                }
+            }
+
+            /*
+                Calculates the chance to play for every color and every tour.
+                If there is no chance to play for a color returns false.
+            */
+            isThereChanceToPlay(){
+                if(this.checkMovable(1,0,this.getStartPoint()) && this.lastDice==6) return true;
+                for(var i=0;i<this.Boxes.length;i++){
+                    if(this.turn==this.Boxes[i]){
+                        var to=i+this.lastDice;
+                        if(to>51)to=to-52; 
+                        if(this.isFinishBox(i,to)!="no"){
+                            var text = this.isFinishBox(i,to);
+                            var intpart =text[text.length-1];
+                            if(intpart!=5 && document.getElementById(this.isFinishBox(i,to)).innerHTML=="") return true;
+                        }
+                        else if(this.checkMovable(2,i,to)){
+                           return true; 
+                        }
+                    }
+                }
+                if(this.lastDice!=6){
+                if(this.FinishBoxes[this.turn-1][5-this.lastDice]!=-1) return true; //5- ekledim to do
+                }
+                return false;
+            }
+
+            /*
+                Returns true if parameter color does finish the game
+            */
+            isFinisher(color){
+                for(var i=0;i<this.Finishers.length;i++){
+                    if(this.Finishers[i]==color){
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            /*
+                Checks the move is possible or not
+            */
+            checkMovable(state,from,to){
+                if(state==1){
+                    if(this.Blocks[to]!=-1 ){
+                        return false;
+                    }
+                    else {
+                        if(this.countOnTableEachColor[this.turn-1]+this.FinishPoints[this.turn-1]==4){
+                            return false;
+                        }
+                        return true
+                    };
+
+                }else if(state==2){
+                    if(from==to) return true;
+                for(let i=from+1;i!=to;i++){
+                    if(i>51) i=i-52;
+                    if(this.Blocks[i]!=-1 && this.Boxes[i]!=this.turn) return false;
+                    if(i==to) break;
+                    
+                }
+                if(this.Blocks[to]!=-1) return false;
+                return true;
+            }
+            }
+
+            /*
+                Returns true if first round has played.
+            */
+            isFirstRoundPlayed(){
+                for(var i=0;i<4;i++){
+                    if(this.firstDices[i]==-1) return false;
+                }
+                return true;
+            }
+            /*
+                Returns the start point of color for this turn.
+            */
+             getStartPoint(){
+                 var point;
+                 if(this.turn==1) point=0;
+                 else if(this.turn==2) point=13;
+                 else if(this.turn==3) point=26;
+                 else if(this.turn==4) point=39;
+                 return point;
+             }
+
+             /*
+                Shows the leaderboard
+             */
+             showLeaderboard(){
+                var last;
+                for(var i=1;i<5;i++){
+                    if(!this.isFinisher(i)){
+                        last=i;
+                        break;
+                    }
+                }
+                document.getElementById('leaderboard').style.display='block';
+                document.getElementById('game').style.display='none';
+
+                document.getElementById('first').textContent="1. "+playerList[this.Finishers[0]];
+                document.getElementById('second').textContent="2. "+playerList[this.Finishers[1]];
+                document.getElementById('third').textContent="3. "+playerList[this.Finishers[2]];
+                document.getElementById('last').textContent="4. "+playerList[last];
+
+                document.getElementById('first').style.color=this.getColorByIndex(this.Finishers[0]);
+                document.getElementById('second').style.color=this.getColorByIndex(this.Finishers[1]);
+                document.getElementById('third').style.color=this.getColorByIndex(this.Finishers[2]);
+                document.getElementById('last').style.color=this.getColorByIndex(last);
+                
+                
+                this.finisherNames[0]=playerList[this.Finishers[0]];
+                this.finisherNames[1]=playerList[this.Finishers[1]];
+                this.finisherNames[2]=playerList[this.Finishers[2]];
+                this.finisherNames[3]=playerList[last];
+
+                socket.emit('submitpoints',this.finisherNames);
+
+             }
+
+             /*
+                Gives info about dice.
+             */
+             alertDice(string){
+                 document.getElementById('alert_dice').textContent=string;
+             }
+             /*
+                Gives info about turn.
+             */
+             alertTurn(string){
+                 document.getElementById('alert_turn').textContent=string;
+             }
+        };
+
+        var game = new Game();
+        /*
+            When dice gets click calls the game.rollDice() method if its possible
+        */
+        document.getElementById('dice-gif').addEventListener('click',function(e){
+        if(game.isRolled==0 && playerList[game.turn]==document.getElementById('usernameText').textContent ){ //if is not rolled and username is matching
+            var snd=new Audio("/sound/dice.mp3");
+            snd.play();
+            var dice = game.rollDice();
+            socket.emit('play',{dice:dice,room:document.getElementById('room_name').textContent});
+        }
+        })
+        //gets play for dice from server
+        socket.on('played',function(data){
+        game.play(data);
+        })
+        //gets move from server
+        socket.on('moved',function(data){
+        game.getMoved(data.color,data.from,data.to,data.state);
+        })
+        
+        //click functions for home boxes
+        for(let i=0;i<4;i++){
+            document.getElementById('g'+i.toString()).addEventListener('click',function(e){
+                game.playMove(1,e,1);
+            })
+            document.getElementById('y'+i.toString()).addEventListener('click',function(e){
+                game.playMove(2,e,1);
+            })
+            document.getElementById('b'+i.toString()).addEventListener('click',function(e){
+                game.playMove(3,e,1);
+            })
+            document.getElementById('r'+i.toString()).addEventListener('click',function(e){
+                game.playMove(4,e,1);
+            })
+        }
+
+        //click functions for finish boxes
+        for(let i=0;i<5;i++){
+            document.getElementById('finish_g_'+i.toString()).addEventListener('click',function(e){
+                game.playMove(1,e,4);
+            })
+            document.getElementById('finish_y_'+i.toString()).addEventListener('click',function(e){
+                game.playMove(2,e,4);
+            })
+            document.getElementById('finish_b_'+i.toString()).addEventListener('click',function(e){
+                game.playMove(3,e,4);
+            })
+            document.getElementById('finish_r_'+i.toString()).addEventListener('click',function(e){
+                game.playMove(4,e,4);
+            })
+        }
+        //click function for boxes
+        for(let i=0;i<52;i++){
+            document.getElementById(i.toString()).addEventListener('click',function(e){
+            var c=game.Boxes[e.srcElement.id];
+            game.playMove(c,e,2);
+            })
+        }
+        //to do debug yerine taşı
+       /*   document.getElementById('20').addEventListener('dblclick',function(e){ 
+            game.Boxes[20]=3;
+            var c=game.Boxes[20];
+            game.playMove(c,e,2);
+            })
+            document.getElementById('46').addEventListener('dblclick',function(e){
+            game.Boxes[46]=1;
+            var c=game.Boxes[46];
+            game.playMove(c,e,2);
+            })
+            document.getElementById('7').addEventListener('dblclick',function(e){
+            game.Boxes[7]=2;
+            var c=game.Boxes[7];
+            game.playMove(c,e,2);
+            })
+            document.getElementById('32').addEventListener('dblclick',function(e){
+            game.Boxes[32]=4;
+            var c=game.Boxes[32];
+            game.playMove(c,e,2);
+            })
+        */
+
+        /*
+            Restarts the game
+        */
+        function restart(){
+            game=new Game();
+            document.getElementById('leaderboard').style.display='none';
+            document.getElementById('game').style.display='block';
+            cleanTable();
+            game.start();
+        }
+        /*
+            Gets restarted message from the server
+        */
+        socket.on('restarted',function(data){
+            restart();
+        })
+
+        /*
+            Gets quits message from the server
+        */
+        socket.on('quits',function(data){
+            quit();
+            socket.emit('closetheroom',{room:document.getElementById('roomName').value})
+        })
+
+        /*
+            Cleans the game table.
+        */
+        function cleanTable(){
+            for(let i=0;i<52;i++){
+            document.getElementById(i.toString()).innerHTML="";
+            }
+            for(let i=0;i<5;i++){
+            document.getElementById('finish_g_'+i.toString()).innerHTML="";
+            document.getElementById('finish_y_'+i.toString()).innerHTML="";
+            document.getElementById('finish_b_'+i.toString()).innerHTML="";
+            document.getElementById('finish_r_'+i.toString()).innerHTML="";
+            }
+            for(let i=0;i<4;i++){
+            document.getElementById('g'+i.toString()).innerHTML="";
+            document.getElementById('y'+i.toString()).innerHTML="";
+            document.getElementById('b'+i.toString()).innerHTML="";
+            document.getElementById('r'+i.toString()).innerHTML="";
+            }
+
+        }
+
+        /*
+            Test functions for debug
+        */
+        function test1(){
+            game.FinishPoints[0]=4;
+            game.FinishPoints[1]=4;
+            game.FinishPoints[2]=4;
+
+            game.checkFinisher();
+        }
+
+        function test2(){
+            var arr=[];
+            arr[0]="sonerozasik";
+            arr[1]="soner";
+            arr[2]="admin";
+            arr[3]="jack"
+            socket.emit('submitpoints',arr);
+        }
+
+        function test3(){
+            var img=document.createElement("img");
+            var img1=document.createElement("img");
+            var img2=document.createElement("img");
+            var img3=document.createElement("img");
+            var img4=document.createElement("img");
+            var img5=document.createElement("img");
+
+
+            img.src="img/Redstar.png";
+            img.style.width='25px';
+            img.style.margin='auto';
+
+            img1.src="img/Redstar.png";
+            img1.style.width='25px';
+            img1.style.margin='auto';
+
+            img2.src="img/Redstar.png";
+            img2.style.width='25px';
+            img2.style.margin='auto';
+
+            img3.src="img/Redstar.png";
+            img3.style.width='25px';
+            img3.style.margin='auto';
+
+            img4.src="img/Redstar.png";
+            img4.style.width='25px';
+            img4.style.margin='auto';
+
+            img5.src="img/Redstar.png";
+            img5.style.width='25px';
+            img5.style.margin='auto';
+
+            document.getElementById("37").appendChild(img);
+            game.Boxes[37]=4;
+            document.getElementById("finish_r_0").appendChild(img1);
+            document.getElementById("finish_r_1").appendChild(img2);
+            document.getElementById("finish_r_2").appendChild(img3);
+            document.getElementById("finish_r_3").appendChild(img3);
+            document.getElementById("finish_r_4").appendChild(img3);
+
+            game.FinishBoxes[3][0]=4;
+            game.FinishBoxes[3][1]=4;
+            game.FinishBoxes[3][2]=4;
+            game.FinishBoxes[3][3]=4;
+            game.FinishBoxes[3][4]=4;
+
+            document.getElementById("r0").innerHTML="";
+            document.getElementById("r1").innerHTML="";
+            document.getElementById("r2").innerHTML="";
+            document.getElementById("r3").innerHTML="";
+
+            game.countOnTableEachColor[3]=4;
+        }
+
+        //GLOBAL VARIABLES
+        var isGameStarted=0;
+        let checkUsers;
+        var playerList=[];
+        //SLEEP FUNCTION
+        function sleep (time) {
+                return new Promise((resolve) => setTimeout(resolve, time)); 
+            }
+        //SET FORM MESSAGE
+        function setFormMessage(formElement, type, message){
+                const messageElement = formElement.querySelector("#form_message");
+                messageElement.textContent=message;
+            }
+       //---------------------LOGIN PART ---------------------------------------------//
+        var LoginButton = document.getElementById('login_button_login');
+        var UsernameTextbox = document.getElementById('login_textbox_username');
+        var PasswordTextbox = document.getElementById('login_textbox_password');
+        var LoginForm=document.getElementById('login');
+        var SignUpForm=document.getElementById('signup');
+        var Login_Button_Signup=document.getElementById('login_button_signup');
+        var Signup_Button_Back=document.getElementById('backbutton');
+        var LobbyForm=document.getElementById('lobby');
+        var ChatForm=document.getElementById('chat-box');
+        var GameForm=document.getElementById('game');
+        var PlayerListForm=document.getElementById('playerlist');
+
+        var usernametext;
+        LoginButton.onclick=function(){
+            var snd=new Audio("/sound/click.wav");
+            snd.play();
+            if(UsernameTextbox.value=="" || PasswordTextbox.value==""){
+                setFormMessage(login,'error',"Fill all informations!");
+            }
+            else 
+            socket.emit('Login',{username:UsernameTextbox.value,password:PasswordTextbox.value});
+        }
+        socket.on('LoginResponse',function(data){
+            if(data.success){
+                usernametext = document.getElementById('usernameText');
+                usernametext.textContent=UsernameTextbox.value;
+                
+
+                UsernameTextbox.value="";
+                PasswordTextbox.value="";
+                setFormMessage(login,'success',"Succesful Login!");
+                sleep(2000).then(()=>{
+                usernametext.style.display='block';
+                LoginForm.style.display='none';
+                LobbyForm.style.display='block';
+                PlayerListForm.style.display='block';
+                socket.emit('refreshRoomsAndPlayers');
+                })
+            }
+            else
+                setFormMessage(login,'error',"Login Error!");
+
+        })
+        //--------------------------------END OF LOGIN PART----------------------------//
+        //--------------------------------SIGN UP PART---------------------------------//
+        var S_SignupButton = document.getElementById('signup_button_signup');
+        var S_UsernameTextbox = document.getElementById('signup_textbox_username');
+        var S_PasswordTextbox = document.getElementById('signup_textbox_password');
+        var S_ConfPasswordTextbox = document.getElementById('signup_textbox_confpassword');
+        
+        S_SignupButton.onclick=function(){
+            var snd=new Audio("/sound/click.wav");
+            snd.play();
+            if(S_UsernameTextbox.value=="" || S_PasswordTextbox.value=="" || S_ConfPasswordTextbox.value==""){
+                setFormMessage(signup,'error',"Fill all informations!");
+            }
+            else 
+            socket.emit('signUp',{username:S_UsernameTextbox.value,password:S_PasswordTextbox.value,confpassword:S_ConfPasswordTextbox.value});
+        }
+        socket.on('signUpResponse',function(data){
+            if(data.success){
+                S_UsernameTextbox.value="";
+                S_PasswordTextbox.value="";
+                S_ConfPasswordTextbox.value="";
+                setFormMessage(signup,'success',"Succesful Sign Up!");
+            }
+            else
+                setFormMessage(signup,'error',"Sign Up Error!");
+
+        })
+        //--------------------------------- END OF SIGN UP PART---------------------------------------//
+        //-----------------------------------LOBBY PART----------------------------------------------//
+        var Lobby_Button_Create = document.getElementById('lobby_button_create');
+        var Lobby_Button_Join = document.getElementById('lobby_button_join');
+        var Lobby_Button_Refresh = document.getElementById('lobby_button_refresh');
+        var RoomName = document.getElementById('room_name');
+        var AlertBar=document.getElementById('alert_bar');
+        var ProfileForm=document.getElementById('profile');
+        var RoomPlayerList=document.getElementById('room_players'); // to do
+       // var userList= new Array();
+
+        Lobby_Button_Create.onclick=function(){
+            var snd=new Audio("/sound/click.wav");
+            snd.play();
+            var snd=new Audio("/sound/join.wav");
+            snd.play();
+            socket.emit('createRoom',document.getElementById('usernameText').textContent);
+            RoomName.textContent=document.getElementById('usernameText').textContent+' room';
+            LobbyForm.style.display='none';
+            PlayerListForm.style.display='none';
+            ChatForm.style.display='block';
+            GameForm.style.display='block';
+            AlertBar.style.display='block';
+            RoomPlayerList.style.display='block';
+            startCheckingUsers();
+        }    
+
+        Lobby_Button_Refresh.onclick=function(){
+            var snd=new Audio("/sound/click.wav");
+            snd.play();
+            socket.emit('refreshRoomsAndPlayers');
+        }
+        
+        socket.on('getRoomsAndPlayers',function(data){     
+            document.querySelector('#rooms').innerHTML="";
+            document.querySelector('#playerlist').innerHTML="";
+            text=document.createElement('h2');
+            text.id="playerlist_text";
+            text.textContent="Player List";
+            document.querySelector('#playerlist').appendChild(text);
+            for(let i=0;i<data.rooms.length;i++){
+                if(data.rooms[i][0]){
+                addRoomToRoomList(data.rooms[i][0],'#rooms');
+                document.getElementById(data.rooms[i][0]).addEventListener('dblclick',function(e){
+                    var snd=new Audio("/sound/join.wav");
+                    snd.play();
+                    socket.emit('joinRoom',{username:document.getElementById('usernameText').textContent,room:e.srcElement.innerHTML});
+                    RoomName.textContent=e.srcElement.innerHTML
+                    console.log(RoomName.textContent);
+                    LobbyForm.style.display='none';
+                    PlayerListForm.style.display='none';
+                    ChatForm.style.display='block';
+                    GameForm.style.display='block';
+                    AlertBar.style.display='block';
+                    RoomPlayerList.style.display='block';
+
+                    startCheckingUsers();
+                })
+                }
+            }
+            var i=0;
+            users.userList=data.users;
+            console.log(users.userList);
+
+            while(data.users[i]){   
+                addUserToPlayerList(data.users[i].username,'#playerlist',i);  
+                document.getElementById("playerlist_element"+i).addEventListener('dblclick',function(e){
+                    showUserProfile(e.srcElement.innerHTML);
+                })
+                i++;
+            }
+        })
+        
+        function showUserProfile(input){
+            for(let i=0;i<users.userList.length;i++){
+                if(users.userList[i].username==input){
+                    console.log(users.userList[i]);     
+                    ProfileForm.style.display='block';
+                    PlayerListForm.style.display='none';
+                    document.getElementById('profile_username').textContent="Username: "+users.userList[i].username;
+                    document.getElementById('profile_first').textContent="First: "+users.userList[i].First;
+                    document.getElementById('profile_second').textContent="Second: "+users.userList[i].Second;
+                    document.getElementById('profile_third').textContent="Third: "+users.userList[i].Third;
+                    document.getElementById('profile_last').textContent="Last: "+users.userList[i].Last;
+                    document.getElementById('profile_total').textContent="Total Played: "+users.userList[i].TotalPlayed;
+
+                    break;
+                }
+            }
+        }
+        
+        document.getElementById('profile_back').addEventListener('click',function(data){
+            var snd=new Audio("/sound/click.wav");
+            snd.play();
+            ProfileForm.style.display='none';
+            PlayerListForm.style.display='block';
+        })
+
+        socket.on('getUsers',function(data){
+            listUsersInRoom(RoomName.textContent,data)
+        })
+
+        /*
+            List users in the room
+        */
+        function listUsersInRoom(roomName,rooms){
+            document.querySelector('#rooms_playerlist').innerHTML="";
+            var i=getIndexofRoom(roomName,rooms);
+            for(let j=0;j<rooms[i].length;j++){
+                addTextToElement(rooms[i][j],'#rooms_playerlist')
+            }
+            if(rooms[i].length>4){ //do 4
+                playerList=rooms[i];
+                stopCheckingUsers();
+                game.start();
+                var list= document.getElementById("rooms_playerlist");
+                list.innerHTML="";
+                var user1 = document.createElement('h2');
+                user1.style.color="green";
+                user1.textContent=playerList[1];
+
+                var user2 = document.createElement('h2');
+                user2.style.color="yellow";
+                user2.textContent=playerList[2];
+
+                var user3 = document.createElement('h2');
+                user3.style.color="blue";
+                user3.textContent=playerList[3];
+
+                var user4 = document.createElement('h2');
+                user4.style.color="red";
+                user4.textContent=playerList[4];
+
+                list.appendChild(user1);
+                list.appendChild(user2);
+                list.appendChild(user3);
+                list.appendChild(user4);
+            }
+        }
+        
+        /*  
+            Returns the index of room by roomName
+        */
+        function getIndexofRoom(roomName,rooms){
+            for(let i=0;i<rooms.length;i++){
+                if(rooms[i][0]){
+                    if(rooms[i][0]==roomName){
+                        return i;
+                    }
+                }
+            }
+            return -1;
+        }
+        /*
+            Adds text to element
+        */
+        const addTextToElement =(text,element)=>{
+            console.log(text);
+
+        const parent =document.querySelector(element);
+        const el =document.createElement('h2');
+        //el.type
+        el.innerHTML=text;
+ 
+        parent.appendChild(el);
+        parent.scrollTop=parent.scrollHeight;
+        }
+
+        /*
+            Adds roomName to element
+        */
+        const addRoomToRoomList =(text,element)=>{
+            console.log(text);
+
+        const parent =document.querySelector(element);
+        const el =document.createElement('h2');
+        el.id=text;
+        el.className="roombutton"
+        //el.type
+        el.innerHTML=text;
+ 
+        parent.appendChild(el);
+        parent.scrollTop=parent.scrollHeight;
+        }
+
+        /*
+            Adds Username to element by index
+        */
+        const addUserToPlayerList =(text,element,index)=>{
+            console.log(text);
+
+        const parent =document.querySelector(element);
+        const el =document.createElement('h2');
+        el.id="playerlist_element"+index;
+        //el.type
+        el.innerHTML=text;
+ 
+        parent.appendChild(el);
+        parent.scrollTop=parent.scrollHeight;
+        }
+
+
+        /*
+            Starts checking users every 5 seconds in the room
+        */
+        function startCheckingUsers(){
+             checkUsers=setInterval(function(){ 
+             socket.emit('refreshUsers');}, 5000);
+        }
+
+        /*
+            Stops cheking users
+        */
+        function stopCheckingUsers(){
+            clearInterval(checkUsers);
+        }
+
+       
+        //-----------------------------------END OF LOBBY PART----------------------------------------//
+        //------------------------------------CHAT PART ---------------------------------------------//
+        var username_chat=document.getElementById('usernameText').textContent;
+        /*
+            Logs a text to chatbox
+        */
+        const log =(text)=>{
+            const parent =document.querySelector('#events');
+            const el =document.createElement('li');
+            el.innerHTML=text;
+            
+            parent.appendChild(el);
+            parent.scrollTop=parent.scrollHeight;
+        }
+        /*
+            Sends and recieves messages from other sockets in the room
+        */
+        const onChatSubmitted =(socket)=>(e)=>{
+             e.preventDefault();
+
+              const input=document.querySelector('#chat');
+              const text=input.value;
+              input.value='';
+
+              socket.emit('message',{text:usernametext.textContent+': '+text,room:document.getElementById('room_name').textContent});
+              }
+
+                (()=>{
+                log('Welcome the game lobby!');
+
+                socket.on('message',log);
+
+                document
+                .querySelector('#chat-form')
+                .addEventListener('submit' ,onChatSubmitted(socket))
+                })();
+        //----------------------------------END OF CHAT PART----------------------------------------//  
+        //----------------------------------GAME PART-----------------------------------------------//
+                document.getElementById("test").addEventListener("click",function(e){
+                    test3();
+                })
+                document.getElementById("restart").addEventListener("click",function(e){
+                    var snd=new Audio("/sound/click.wav");
+                    snd.play();
+                    socket.emit('restart',{room:document.getElementById('room_name').textContent});
+                })
+
+                document.getElementById("quit").addEventListener("click",function(e){
+                    var snd=new Audio("/sound/click.wav");
+                    snd.play();
+                    socket.emit('quit',{room:document.getElementById('room_name').textContent});
+                    socket.emit('refreshRoomsAndPlayers');
+                })
+                /*
+                    Quits the room and opens the lobby tab
+                */
+                function quit(){
+                     document.getElementById('leaderboard').style.display='none';
+                     ChatForm.style.display='none';
+                     RoomPlayerList.style.display='none';
+                     AlertBar.style.display='none';
+                     LobbyForm.style.display='block';
+                     PlayerListForm.style.display='block';
+
+                     socket.emit('refreshRoomsAndPlayers');
+                }
+        //----------------------------------BUTTON CLICKS--------------------------------------------//
+        Login_Button_Signup.onclick=function(){
+            var snd=new Audio("/sound/click.wav");
+            snd.play();
+            LoginForm.style.display='none';
+            SignUpForm.style.display='block';
+        }
+        Signup_Button_Back.onclick=function(){
+            var snd=new Audio("/sound/click.wav");
+            snd.play();
+            LoginForm.style.display='block';
+            SignUpForm.style.display='none';
+        }
+        //-----------------------------------END OF BUTTON CLICKS------------------------------------//
+        
+    </script>
+</body>
+</html>

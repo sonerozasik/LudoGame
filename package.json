@@ -1,0 +1,23 @@
+{
+  "name": "ludo",
+  "version": "1.0.0",
+  "description": "ludo",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "nodemon server2.js"
+  },
+  "author": "Soner",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongodb": "^4.2.1",
+    "mongojs": "^3.1.0",
+    "mongoose": "^6.1.1",
+    "socket.io": "^4.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

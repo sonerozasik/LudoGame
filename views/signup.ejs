@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Soner Özaşık</title>
+    <link rel="stylesheet" href="css/signup.css" >
+</head>
+<body>
+    <div class="top">
+        <div class="top2">
+            <h2>LUDO</h2>
+        </div>
+    </div>
+    <form action="/signup" method="post" id="signup" class="signup">
+        <h2 class=Message id=form_message>Message</h2>
+        <h2 class="Username">Username</h2>
+        <input id="textbox_username" class= "textbox">
+        <div class="line"></div>
+        <h2 class="Password">Password</h2>
+        <input id="textbox_password" class= "textbox">
+        <div class="line"></div>
+        <h2 class="Password">Confirm Password</h2>
+        <input id="textbox_confpassword" class= "textbox">
+        <div class="line"></div>
+        <div id="signup_button_signup" class="button1">
+            Sign Up
+        </div>
+        <div id="backbutton" class="button2" onclick="location.href='/'">
+            Back
+        </div>
+    </form>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        function setFormMessage(formElement, type, message){
+    const messageElement = formElement.querySelector("#form_message");
+    messageElement.textContent=message;
+}
+        var socket =io();
+
+        var LoginButton = document.getElementById('signup_button_signup');
+        var UsernameTextbox = document.getElementById('textbox_username');
+        var PasswordTextbox = document.getElementById('textbox_password');
+        var ConfPasswordTextbox = document.getElementById('textbox_confpassword');
+
+        
+        LoginButton.onclick=function(){
+            socket.emit('signUp',{username:UsernameTextbox.value,password:PasswordTextbox.value,confpassword:ConfPasswordTextbox.value});
+        }
+        socket.on('signUpResponse',function(data){
+            if(data.success){
+                UsernameTextbox.value="";
+                PasswordTextbox.value="";
+                ConfPasswordTextbox.value="";
+                setFormMessage(signup,'success',"Succesful Sign Up!");
+            }
+            else
+                setFormMessage(signup,'error',"Sign Up Error!");
+
+        })
+
+    </script>
+
+
+</body>
+</html>
